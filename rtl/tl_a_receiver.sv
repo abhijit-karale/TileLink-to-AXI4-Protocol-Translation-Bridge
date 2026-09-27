@@ -9,7 +9,7 @@
 `ifndef TL_A_RECEIVER_SV
 `define TL_A_RECEIVER_SV
 
-`include "tl_axi4_pkg.sv"
+import tl_axi4_pkg::*;
 
 module tl_a_receiver #(
   parameter int ADDR_WIDTH   = 32,

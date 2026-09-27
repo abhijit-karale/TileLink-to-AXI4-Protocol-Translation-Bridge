@@ -1,0 +1,36 @@
+[options]
+mode bmc
+depth 30
+expect pass
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal tl_axi4_pkg.sv
+read -formal tl_skid_buffer.sv
+read -formal tl_sync_fifo.sv
+read -formal tl_source_cam.sv
+read -formal tl_burst_segmenter.sv
+read -formal tl_a_receiver.sv
+read -formal tl_axi_write_engine.sv
+read -formal tl_axi_read_engine.sv
+read -formal tl_d_transmitter.sv
+read -formal tl_axi4_bridge_top.sv
+read -formal bridge_sva_invariants.sv
+read -formal formal_bridge_top.sv
+prep -top formal_bridge_top
+
+[files]
+../../rtl/tl_axi4_pkg.sv
+../../rtl/tl_skid_buffer.sv
+../../rtl/tl_sync_fifo.sv
+../../rtl/tl_source_cam.sv
+../../rtl/tl_burst_segmenter.sv
+../../rtl/tl_a_receiver.sv
+../../rtl/tl_axi_write_engine.sv
+../../rtl/tl_axi_read_engine.sv
+../../rtl/tl_d_transmitter.sv
+../../rtl/tl_axi4_bridge_top.sv
+bridge_sva_invariants.sv
+formal_bridge_top.sv

@@ -9,8 +9,7 @@
 `ifndef TL_D_TRANSMITTER_SV
 `define TL_D_TRANSMITTER_SV
 
-`include "tl_axi4_pkg.sv"
-`include "tl_skid_buffer.sv"
+import tl_axi4_pkg::*;
 
 module tl_d_transmitter #(
   parameter int DATA_WIDTH   = 64,

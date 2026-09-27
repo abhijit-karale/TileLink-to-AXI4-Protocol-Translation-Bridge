@@ -10,15 +10,7 @@
 `ifndef TL_AXI4_BRIDGE_TOP_SV
 `define TL_AXI4_BRIDGE_TOP_SV
 
-`include "tl_axi4_pkg.sv"
-`include "tl_skid_buffer.sv"
-`include "tl_sync_fifo.sv"
-`include "tl_source_cam.sv"
-`include "tl_burst_segmenter.sv"
-`include "tl_a_receiver.sv"
-`include "tl_axi_write_engine.sv"
-`include "tl_axi_read_engine.sv"
-`include "tl_d_transmitter.sv"
+import tl_axi4_pkg::*;
 
 module tl_axi4_bridge_top #(
   parameter int ADDR_WIDTH      = 32,

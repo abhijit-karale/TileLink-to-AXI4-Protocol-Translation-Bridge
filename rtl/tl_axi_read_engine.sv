@@ -9,7 +9,7 @@
 `ifndef TL_AXI_READ_ENGINE_SV
 `define TL_AXI_READ_ENGINE_SV
 
-`include "tl_axi4_pkg.sv"
+import tl_axi4_pkg::*;
 
 module tl_axi_read_engine #(
   parameter int ADDR_WIDTH   = 32,
