@@ -91,11 +91,11 @@ class tl_seq_item #(
       data = new[beats];
       mask = new[beats];
       for (int i = 0; i < beats; i++) begin
-        if (!this.randomize(data[i])) data[i] = $urandom();
+        data[i] = {$urandom(), $urandom()};
         if (opcode == TL_A_PUT_FULL_DATA) begin
           mask[i] = '1;
         end else begin
-          if (!this.randomize(mask[i])) mask[i] = '1;
+          mask[i] = $urandom();
           if (mask[i] == '0) mask[i] = '1;
         end
       end
