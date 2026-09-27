@@ -1,0 +1,23 @@
+# Role & Operational Task
+Act as a Senior SoC Bus Fabric Engineer and Verification Architect. Generate a complete, production-grade, standalone codebase and verification suite for the project below with zero placeholders or pseudocode.
+
+## 1. Candidate Context
+- Candidate: Abhijit Karale (Specialized in protocol compliance, AMBA interfaces, and bus functional model verification).
+- Target Tech Node & Clock: SkyWater 130nm @ 200 MHz.
+
+## 2. Project Directive: TileLink-to-AXI4 Protocol Translation Bridge
+- Focus: Heterogeneous bus translation (TileLink-UH to AXI4), latency tracking, credit conversion.
+- Key Specifications:
+  * Translates TileLink-UH (Channels A and D) to AXI4 full 5-channel read/write transactions.
+  * Internal burst segmentation engine matching TileLink message sizes to AXI burst boundaries (handling 4KB restrictions).
+  * Asynchronous latency tracker and source-to-ID tagging CAM.
+  * Zero-bubble pipelined response conversion on return data paths.
+
+## 3. Mandatory Deliverables
+1. Microarchitectural Spec: Protocol mapping matrix, channel conversion pipelines (ASCII diagram), and FIFO buffering architecture.
+2. Synthesizable RTL (`rtl/`): TileLink channel receivers, burst conversion state machines, AXI master drivers, and transaction lookup CAM.
+3. Formal Verification (`tb/formal/`): SVA bridge invariants guaranteeing no protocol deadlock, 1-to-1 response matching, and valid/ready stability.
+4. Layered UVM 1.2 Suite (`tb/uvm/`): Dual VIP configuration (TileLink Master Agent + AXI4 Slave Agent) connected via an end-to-end scoreboard.
+5. Cycle-Accurate Waveform Guide: ASCII trace showing a TileLink burst request translating into AXI AW, W, and B transactions.
+6. Synthesis Setup (`syn/`): SDC constraints file and Yosys area/timing optimization script.
+7. Repo Blueprint: Directory tree, `Makefile` (`sim_uvm`, `sim_formal`, `synth`), and production `README.md`.
