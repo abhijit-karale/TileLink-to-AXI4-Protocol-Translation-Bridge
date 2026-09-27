@@ -1,0 +1,12 @@
+# vsim -c -voptargs="+acc" tb_top "+UVM_TESTNAME=bridge_sanity_test" -do "run -all; quit -f" 
+# Start time: 08:32:06 on Sep 27,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 2 FSMs in module "tl_axi_write_engine(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "tl_burst_segmenter(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "tl_axi_read_engine(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "tl_a_receiver(fast)".
+# ** Error: tb/uvm/env/bridge_env_pkg.sv(22): Questa has encountered an unexpected internal error: ../../src/vlog/vgentd.c(6087). Please contact Questa support at http://supportnet.mentor.com/
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 2.
+# Error loading design
+# End time: 08:32:10 on Sep 27,2026, Elapsed time: 0:00:04
+# Errors: 2, Warnings: 0

@@ -1,0 +1,2 @@
+3 118 INSERT OR REPLACE INTO mainfiles (auxid,fileid,duname,name,size,time,flags) VALUES (?,?,?,?,?,strftime('%s','now'),?); 6 0 4 0 1 2 5 _temp 2 10 vlogtzfzc9 1 1929 0 267
+25 125 INSERT OR REPLACE INTO meta (key,value1,value2) VALUES (?,?,IFNULL((SELECT value2 FROM meta WHERE key=? AND value1=?), 0)+?); 5 2 12 page_inserts 0 4 2 12 page_inserts 0 4 0 1
